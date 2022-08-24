@@ -4,7 +4,7 @@
 #
 Name     : oneVPL
 Version  : b15afe51192c9c00e97490cb797b311b68e21aa1
-Release  : 2
+Release  : 3
 URL      : https://github.com/oneapi-src/oneVPL/archive/b15afe51192c9c00e97490cb797b311b68e21aa1.tar.gz
 Source0  : https://github.com/oneapi-src/oneVPL/archive/b15afe51192c9c00e97490cb797b311b68e21aa1.tar.gz
 Summary  : oneAPI Video Processing Library
@@ -93,7 +93,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1661383613
+export SOURCE_DATE_EPOCH=1661384002
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -116,7 +116,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 cd clr-build; make test
 
 %install
-export SOURCE_DATE_EPOCH=1661383613
+export SOURCE_DATE_EPOCH=1661384002
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/oneVPL
 cp %{_builddir}/oneVPL-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/oneVPL/23bd2c3b0aa961314a708f12595c02e8a1683682
@@ -145,9 +145,9 @@ pushd clr-build
 popd
 ## install_append content
 
-mkdir -p %{buildroot}/usr/share/oneVPL
-mv %{buildroot}/usr/etc/modulefiles %{buildroot}/usr/share/oneVPL/
-mv %{buildroot}/usr/etc/vpl %{buildroot}/usr/share/oneVPL/env
+mkdir -p %{buildroot}/usr/share/vpl
+mv %{buildroot}/usr/etc/modulefiles %{buildroot}/usr/share/vpl/
+mv %{buildroot}/usr/etc/vpl %{buildroot}/usr/share/vpl/env
 ## install_append end
 
 %files
@@ -165,8 +165,7 @@ mv %{buildroot}/usr/etc/vpl %{buildroot}/usr/share/oneVPL/env
 
 %files data
 %defattr(-,root,root,-)
-/usr/share/oneVPL/env/vars.sh
-/usr/share/oneVPL/modulefiles/vpl
+/usr/share/vpl/env/vars.sh
 /usr/share/vpl/examples/content/cars_320x240.h265
 /usr/share/vpl/examples/content/cars_320x240.i420
 /usr/share/vpl/examples/content/cars_320x240.mjpeg
@@ -285,6 +284,7 @@ mv %{buildroot}/usr/etc/vpl %{buildroot}/usr/share/oneVPL/env
 /usr/share/vpl/examples/preview/cplusplus/hello-encode-cpp/src/util.hpp
 /usr/share/vpl/licensing/license.txt
 /usr/share/vpl/licensing/third-party-programs.txt
+/usr/share/vpl/modulefiles/vpl
 
 %files dev
 %defattr(-,root,root,-)
