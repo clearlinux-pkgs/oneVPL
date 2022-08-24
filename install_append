@@ -1,0 +1,4 @@
+
+mkdir -p %{buildroot}/usr/share/oneVPL
+mv %{buildroot}/usr/etc/modulefiles %{buildroot}/usr/share/oneVPL/
+mv %{buildroot}/usr/etc/vpl %{buildroot}/usr/share/oneVPL/env
