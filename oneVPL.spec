@@ -4,7 +4,7 @@
 #
 Name     : oneVPL
 Version  : b15afe51192c9c00e97490cb797b311b68e21aa1
-Release  : 3
+Release  : 4
 URL      : https://github.com/oneapi-src/oneVPL/archive/b15afe51192c9c00e97490cb797b311b68e21aa1.tar.gz
 Source0  : https://github.com/oneapi-src/oneVPL/archive/b15afe51192c9c00e97490cb797b311b68e21aa1.tar.gz
 Summary  : oneAPI Video Processing Library
